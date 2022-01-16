@@ -1,0 +1,51 @@
+.messageContainer{
+    width: 100%;
+}
+.message {
+    width: fit-content;
+    max-width: 60%;
+    box-sizing: border-box;
+    padding: 16px;
+    border: #ebebeb 1px solid;
+    border-radius: 20px;
+    margin-top: 4px;
+    position: relative;
+
+    &.firstInGroup{
+        margin-top: 16px;
+    }
+
+
+    &.contactMessage {
+        background-color: white;
+        margin-right: auto;
+        
+        &.lastInGroup{
+            border-radius: 20px 20px 20px 0px;
+        }
+                
+    }
+
+    &.personalMessage{
+        background-color: #FEF8F5;
+        margin-left: auto;
+
+        &.lastInGroup{
+            border-radius: 20px 20px 0px 20px;
+        }
+
+    }
+}
+
+.messageSpacer{
+    width: 138px;
+    height: 20px;
+}
+.messageTime{
+    font-size: 12px;
+    color: $messageGrey;
+    margin-left: auto;
+    position: absolute;
+    bottom: 16px;
+    right:16px;
+}
