@@ -138,11 +138,9 @@ p, h1, h2, h3, h4, h5, h6, div, span {
 }
 
 .messages {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
+  height: calc(100vh - 167px);
   padding: 16px 64px;
+  overflow: scroll;
 }
 
 #chat {
@@ -150,15 +148,21 @@ p, h1, h2, h3, h4, h5, h6, div, span {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   flex-direction: column;
+  width: 100%;
 }
 #chat .contact:hover {
   background-color: transparent;
   cursor: auto;
 }
 #chat .inputDiv {
-  margin-top: auto;
-  width: auto;
+  width: 97%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  white-space: nowrap;
 }
 
 .inputDiv {

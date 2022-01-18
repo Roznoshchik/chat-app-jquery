@@ -2,9 +2,12 @@
 
 .messages{
     //width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-end;
+    height: calc(100vh - 167px); // this always confuses me. Likely better ways.
+    //flex-grow: 1;
+    // display: flex;
+    // flex-wrap: wrap;
+    // //align-content: flex-end;
     padding: 16px 64px;
+    overflow: scroll;
+
 }
