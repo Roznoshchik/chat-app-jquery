@@ -322,7 +322,7 @@ const addMessageToChat = (chatId, body, recipientId, senderId) => {
 
     currentChat.messages.unshift(msg) // add message to top of array // can this be jquery?
     renderMessageToChat(msg)
-    populateContacts()
+    populateContacts(chats)
     generateResponse(recipientId, chatId)
 }
 
@@ -432,7 +432,7 @@ const removeLastInGroup = (id) => {
     // remove lastInGroup class from this message.
 }
 
-const populateContacts = () => {
+const populateContacts = (chats) => {
     sortChats()
     let active = true // This is so that the latest chat is autoselected
 
@@ -454,6 +454,21 @@ const populateContacts = () => {
     }
 
 
+    currentContacts.html(populatedHTML)
+
+}
+
+const searchContacts = (chats) => {
+    const currentContacts = $('#allContacts') // 
+    let populatedHTML = '' // pull the existing html
+
+    // redo this to jquery
+    for(let chat of chats){
+        const contact = users.find(u => u.id === chat.participants.find(p => p != currentUser.id)) // find contact who isn't current user
+        const message = chat.messages[0] // get the last message
+        c = ChatListContact(chat.id, contact, message, false) // render a chat contact component
+        populatedHTML += c // build the full inner div
+    }
     currentContacts.html(populatedHTML)
 
 }
@@ -604,5 +619,33 @@ const handleEnter = (evt) => {
 textarea.on('input', adjustSize)
 textarea.on('keydown', handleEnter)
 
-populateContacts()
+populateContacts(chats)
 $('#allMessages').scrollTop($('#allMessages')[0].scrollHeight);
+
+
+const filterContacts = () => {
+    let search = $('#contactSearch').val()
+    if(search == '') {
+        searchContacts(chats)
+        return
+    }
+    contacts = $.grep(users, function(u){
+        search = search.toLowerCase() 
+        return u.name.toLowerCase().includes(search)
+    })
+
+    ids = []
+    $.each(contacts, function(index, contact){
+        if(contact.id !== 5) ids.push(contact.id)
+    })
+    const filteredChats = $.grep(chats, function(chat){
+        let participant = $.grep(chat.participants, function(p){
+            return p !== currentUser.id
+        })[0]
+        let x = $.inArray(participant, ids) > -1
+        return x
+    })
+    searchContacts(filteredChats)
+} 
+
+$('#contactSearch').on('input', filterContacts)
