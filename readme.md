@@ -13,7 +13,7 @@ As part of a coding assignment, I was asked to build a simple chat application.
 
 ## Details
 
-This took me around 25 hours to complete. I wasn't actually keeping track of time, but thinking through the timing, that feels pretty accurate. 
+This took me around 30-35 hours to complete. I wasn't actually keeping track of time, but thinking through the timing, that feels pretty accurate. 
 
 I had only known some very basic jQuery before this, so I wasn't familiar with the library.
 
