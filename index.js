@@ -650,7 +650,7 @@ const handleEnter = (evt) => {
         evt.preventDefault()
         addMessageToChat(chatId, textarea.val(), recipient, currentUser.id)
         textarea.val('')
-        adjustSize()
+        textarea.attr('rows', 1)
         currentUser.lastSeen = getUTCDate()
     }
 
