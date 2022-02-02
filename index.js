@@ -8,14 +8,14 @@ const users = [
     {
         id: 5, // unique id for the user
         name: 'RR', // users name
-        lastSeen: Date.UTC(2022, 0, 16, 08, 33, 30), // utc date string of when the user was last active
+        lastSeen: Date.UTC(2022, 0, 16, 08, 33, 30, 21), // utc date string of when the user was last active
         profilePic:'images/contact0.png', // where to find the profile picture of the user
         responses : [] // this is only existing for the purposes of the demo chat, so that the users can respond. Wouldn't exist in an actual app.
     }, 
     {
         id: 1,
         name:"Ashish Sharma",
-        lastSeen: Date.UTC(2022, 0, 16, 21, 47),
+        lastSeen: Date.UTC(2022, 0, 16, 21, 47, 22),
         profilePic: 'images/contact1.png',
         responses :[
             "Sorry. I can't talk, I'm driving.",
@@ -29,7 +29,7 @@ const users = [
     {
         id: 2,
         name:"Dazzle Jam",
-        lastSeen: Date.UTC(2022, 0, 16, 21, 29),
+        lastSeen: Date.UTC(2022, 0, 16, 21, 29, 54),
         profilePic: 'images/contact2.png',
         responses : [
             "I got to be honest with you. This won't work.",
@@ -43,7 +43,7 @@ const users = [
     {
         id: 3,
         name:"Pavel Danilyuk",
-        lastSeen: Date.UTC(2022, 0, 15, 11, 47),
+        lastSeen: Date.UTC(2022, 0, 15, 11, 47, 11),
         profilePic: 'images/contact3.png',
         responses : [
             "I'm binging netflix for the next week.",
@@ -57,7 +57,7 @@ const users = [
     {
         id: 4,
         name:"Cottonbro",
-        lastSeen: Date.UTC(2022, 0, 15, 11, 47),
+        lastSeen: Date.UTC(2022, 0, 15, 11, 47, 32),
         profilePic: 'images/contact4.png',
         responses : [
             "Yo. Do me a solid. Don't text me for a few days. I'm going through some shit.",
@@ -445,6 +445,7 @@ They render the time in the proper format depending on the conmponent being used
 
 // main function that takes a utc string and determines what it needs to be.
 const convertFromUTC = (utcDate, output) => {
+
     d = new Date(utcDate)
     if (output == 'onlyTime'){ // 11:34 PM
         return getTime(d)
@@ -475,6 +476,7 @@ const getFullDate = (d) => {
 }
 
 const getShortDate = (d) => {
+    
     today = new Date(getUTCDate())
     if (d.getYear() == today.getYear() && d.getMonth() == today.getMonth()){
         if(d.getDate() == today.getDate()){
@@ -487,6 +489,9 @@ const getShortDate = (d) => {
             const options = {year: 'numeric', month: 'short', day: 'numeric'}
             return d.toLocaleString('en-US', options)
         }
+    }
+    else {
+        return getFullDate(d)
     }
 }
 
@@ -510,6 +515,9 @@ const getRenderedFullDate = (d) => {
         else {
             return getFullDate(d)
         }
+    }
+    else {
+        return getFullDate(d)
     }
 
 }
