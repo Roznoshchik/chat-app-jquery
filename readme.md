@@ -21,6 +21,6 @@ I used SASS to write and compile my css code.
 
 The app won't render correctly on mobile as I did not add any affordances for screensizes outside of my 14" MBP. 
 
-The application doesn't have any backend. Everything happenson the client side.
+The application doesn't have any backend. Everything happens on the client side.
 
 You can see a live version of this application at my site here: [code.rch.work/chat-app](https://code.rch.work/chat-app) 
