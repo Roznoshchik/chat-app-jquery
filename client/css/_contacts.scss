@@ -1,0 +1,12 @@
+@import "contact";
+
+#contacts {
+    min-height: 100vh;
+    background-color: white;
+    box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-width: 375px;
+    width: 25%;
+    position: relative;
+    z-index: 10;
+}

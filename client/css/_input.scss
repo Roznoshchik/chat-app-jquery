@@ -1,0 +1,47 @@
+.inputDiv {
+    display: flex;
+    align-items: center;
+    //height: 50px;
+    height: auto;
+    padding:  8px 16px;
+    width: 100%;
+    //border-right: #dad9d9 1px solid;
+    
+
+}
+.inputContainer{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    padding: 2px 16px 2px 16px;
+    border-radius: 24px;
+    height: auto;
+    align-items: center;
+}
+
+.inputIcon{
+    margin-right: 24px;
+
+    svg {
+        height: 14px;
+    }
+}
+
+.inputField {
+    flex-grow: 1;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+
+textarea.inputField{
+    padding: 16px;
+    height: auto;
+    resize: none;
+    max-height: 150px;
+}
