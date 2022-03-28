@@ -2,6 +2,10 @@
 
 As part of a coding assignment, I was asked to build a simple chat application.
 
+## Differences between main branch
+The main branch doesn't have backend or a db. 
+This branch uses a postgres database with a koa server. 
+
 ## Assignment Requirements
 
 - Anything that could be jQuery should be in jQuery
