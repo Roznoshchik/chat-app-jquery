@@ -2,9 +2,9 @@
 
 As part of a coding assignment, I was asked to build a simple chat application.
 
-## Differences between main branch
+## Different branches
 The main branch doesn't have backend or a db. 
-This branch uses a postgres database with a koa server. 
+The koa-postgres branch uses a postgres database with a koa server. 
 
 ## Assignment Requirements
 
