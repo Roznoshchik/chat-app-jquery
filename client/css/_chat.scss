@@ -1,0 +1,32 @@
+@import "messages";
+
+#chat {
+    flex-grow: 1;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+
+    .contact{
+        &:hover{
+            background-color: transparent;
+            cursor: auto;
+        }
+    }
+
+
+    .inputDiv{
+        //margin-top: auto;
+        //width: 97%;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left:0;
+        white-space: nowrap;
+    }
+}
+
+

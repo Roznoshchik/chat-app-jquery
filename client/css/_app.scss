@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;700&display=swap');
+
+$messageGrey: #7a7a7a;
+
+p, h1,h2,h3,h4,h5,h6, div, span{
+    font-family: 'Work Sans', sans-serif;
+}
+
+#app {
+    margin: 0;
+    display: flex;
+    background-color: #efefef;
+    height: 100%;
+}
+
+.header{
+    border-bottom: #dad9d9 1px solid;
+    background-color: #faf9f5;
+    height: 64px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bgGrey {
+    background-color: #faf9f5;
+}
